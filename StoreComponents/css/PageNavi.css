@@ -1,0 +1,27 @@
+﻿.pagenavi {
+    /*border-top:1px solid #7baa00;*/
+    text-align: center;
+    direction: ltr;
+}
+
+.pagenavi a {
+    background: #d3d7cc;
+    color: #403e3b;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: larger;
+    border-radius:3px;
+}
+
+.pagenavi a:hover, .pagenavi .current {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:3px;
+    font-size: larger;
+    background: #7baa00;
+    color: #fff;
+}
