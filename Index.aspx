@@ -103,7 +103,7 @@
                                                 <h4>تومان <%# Convert.ToString(Eval("Price")) %> <span>تومان <%# Convert.ToString(Eval("Price") + 1000) %></span></h4>
                                             </div>
                                             <div class="snipcart-details">
-                                                <a href="buying" onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="width: 40%;" class="btn btn-danger hvr-sweep-to-left my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>خرید</a>
+                                                <a href="buying" onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="border-radius:4px 4px 4px 4px;width: 40%;" class="btn btn-danger hvr-sweep-to-left my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>خرید</a>
                                                 <button onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="width: 40%;" class="btn btn-default my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>افزودن</button>
                                             </div>
                                     </div>
@@ -146,7 +146,7 @@
                                             <h4>تومان <%# Convert.ToString(Eval("Price")) %> <span>تومان <%# Convert.ToString(Eval("Price") + 1000) %></span></h4>
                                         </div>
                                         <div class="snipcart-details">
-                                                <a href="buying" onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="width: 40%;" class="btn btn-danger hvr-sweep-to-left my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>خرید</a>
+                                                <a href="buying" onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="border-radius:4px 4px 4px 4px;width: 40%;" class="btn btn-danger hvr-sweep-to-left my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>خرید</a>
                                                 <button onclick="<%# Session("Buying") = Session("Buying") + Eval("Name").ToString() %>" style="width: 40%;" class="btn btn-default my-cart-btn" data-id='<%# Eval("IDP").ToString %>' data-name='<%# Eval("Name").ToString %>' data-summary='<%# Eval("Description").ToString %>' data-price='<%# Eval("Price").ToString %>' data-quantity="1" data-image='<%# Eval("Pic").ToString %>'>افزودن</button>
                                         </div>
                                     </div>
