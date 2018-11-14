@@ -32,6 +32,8 @@
         routes.MapPageRoute("", "Buying", "~/Customer/Buying.aspx")
         routes.MapPageRoute("", "Products/{CatName}/{IDCat}", "~/Products.aspx")
         routes.MapPageRoute("", "Products/{CatName}/{ProductName}/{ProductID}", "~/ProductView.aspx")
+        routes.MapPageRoute("", "UserVerification/{ActivationCode}", "~/UserVerification.aspx")
+        routes.MapPageRoute("", "Login", "~/SignInUp.aspx")
 
         routes.MapPageRoute("", "AP", "~/Admin/AdminPanel.aspx")
         routes.MapPageRoute("", "Exit", "~/Admin/ProgressLogout.aspx")

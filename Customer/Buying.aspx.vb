@@ -22,12 +22,16 @@ Partial Class Buying
         Dim db = New LinqDBClassesDataContext
         Dim User = New User
         Dim Factor = New Sale
+        Dim rands As New Random
+        Dim peygiricode As String
         Dim qry = From m In db.Users
                   Select m Where m.Username = HttpContext.Current.User.Identity.Name.ToString.Substring(0, HttpContext.Current.User.Identity.Name.ToString.Length - 2)
         For Each q In qry
             Factor.Username = q.Username
             Factor.Phone = q.Phone
             Factor.Email = q.Email
+            Factor.PeygiriCode = rands.Next(1000000, 9999999)
+            peygiricode = Factor.PeygiriCode
             'Factor.Address=txtAddress.Text
             'Factor.Map =txtMap.Text
             'Factor.DateAndTime = txtDateAndTime.Text
@@ -51,6 +55,9 @@ Partial Class Buying
                 db.SubmitChanges()
                 't += 3
             Next
+            btnSave.Visible = False
+            lblRequest.Text = " درخواست خرید شما با شماره پیگیری" + " " + peygiricode + Convert.ToString(Factor.IDS) + " " + " ارسال شد. لطفا منتظر تماس ما باشید."
+            lblRequest.Visible = True
         Next
     End Sub
 End Class

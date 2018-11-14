@@ -102,6 +102,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer" style="text-align: center;">
+            <asp:Label  runat="server" CssClass="label-success" id="lblRequest"  Visible="false"/>
             <asp:Button runat="server" CssClass="btn-success" ID="btnSave" Text="ثبت سفارش" />
         </div>
     </div>
