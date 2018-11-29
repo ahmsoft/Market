@@ -119,10 +119,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
-                                <ul class="dropdown-menu drp-mnu">
-                                    <li><a href="/login">ورود</a></li>
-                                    <li><a href="/Order">ثبت نام</a></li>
-                                </ul>
+                                <%--<ul class="dropdown-menu drp-mnu">--%>
+                                    <asp:Label runat="server" style="" ID="lblUserStatus" />
+                                    <%--<li><a href="/login">ورود</a></li>
+                                    <li><a href="/Order">ثبت نام</a></li>--%>
+<%--                                </ul>--%>
                             </div>
                         </div>
                     </li>
