@@ -5,6 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="w3_login">
         <h3>ورود/ ثبت نام</h3>
+            <center>
+<br />
+                <asp:Label style="margin:auto;font-size:12px;border-radius: 6px 6px 6px 6px;padding:8px 8px 8px 8px;" runat="server" CssClass="label-danger" id="lblStatus"  Visible="false"/>
+             <%--   <br />
+                <asp:Label style="margin:auto;font-size:12px;border-radius: 6px 6px 6px 6px;padding:8px 8px 8px 8px;" ID="lblSignupSuccessLog" runat="server" CssClass="label-success" Visible="false" />
+                <br/>
+            <asp:Label style="margin:auto;font-size:12px;border-radius: 6px 6px 6px 6px;padding:8px 8px 8px 8px;" ID="lblSignupErrorLog" runat="server" CssClass="label-danger" Visible="false" />--%>
+            </center> 
         <div class="w3_login_module">
             <div class="module form-module">
                 <div class="toggle">
@@ -29,17 +37,14 @@
             </asp:UpdatePanel>
 
                     <asp:TextBox ID="txtPass" onKeyup="Signupp(event);" runat="server" ValidationGroup="signup" type="password" name="Password" placeholder="رمز عبور" />
-                    <asp:TextBox ID="txtRPass" onKeyup="Signupp(event);" runat="server" ValidationGroup="signup" type="password" name="Password" placeholder="تکرار رمز عبور" ControlToValidate="txtRPass" />
+                    <asp:TextBox ID="txtRPass" onKeyup="Signupp(event);" runat="server" ValidationGroup="signup" type="password" name="Password" placeholder="تکرار رمز عبور" />
                     <%--                        <asp:TextBox ID="txtPhone" runat="server" ValidationGroup="signup" type="text" name="Phone" placeholder="تلفن" />--%>
                     <asp:Button ID="btnSignup" onKeyup="Signupp(event);" runat="server" OnClientClick="SignUpValidation();" ValidationGroup="signup" value="ثبت نام" Text="ثبت نام" />
                 </div>
                 <div class="cta"><a href="#">رمز عبور خود را فراموش کرده اید؟</a></div>
             </div>
-            <center>
-            <asp:Label ID="lblSignupSuccessLog" runat="server" CssClass="label-success" Visible="false" />
-                <br/>
-            <asp:Label ID="lblSignupErrorLog" runat="server" CssClass="label-danger" Visible="false" />
-            </center>
+            
+            
         </div>
         <script>
             function Ariv(event) {

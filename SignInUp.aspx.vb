@@ -3,6 +3,7 @@ Imports System.Net.Mail
 Partial Class SignInUp
     Inherits System.Web.UI.Page
     Protected Sub btnArival_Click(sender As Object, e As EventArgs) Handles btnArival.Click
+        lblStatus.Visible = False
         Dim db = New LinqDBClassesDataContext
         Dim UserMarket = From m In db.UserMarkets
                          Select m Where m.Email = txtUsernameE.Text And m.Password = txtPassword.Text
@@ -10,6 +11,11 @@ Partial Class SignInUp
             'System.Web.Security.Roles.CreateRole("Client")
             System.Web.Security.FormsAuthentication.RedirectFromLoginPage(m.Email.ToString() + " 0", chk.Checked)
         Next
+        'lblSignupSuccessLog.Visible = False
+        'lblSignupErrorLog.Visible = False
+        lblStatus.CssClass = "label-danger"
+        lblStatus.Text = "نام کاربری یا رمز عبور نادرست می‌باشد."
+        lblStatus.Visible = True
 
     End Sub
     Protected Sub btnSignup_Click(sender As Object, e As EventArgs) Handles btnSignup.Click
@@ -85,22 +91,35 @@ Partial Class SignInUp
                             smtp.Send(mail)
                         Catch ex2 As Exception
                             Response.Write(ex2.Message)
-                            lblSignupErrorLog.CssClass = "label-danger"
-                            lblSignupErrorLog.Text = "مشکل ارسال ایمیل فعال سازی از سمت سرور. لطفا با پشتیبانی تماس بگیرید."
-                            lblSignupErrorLog.Visible = True
+                            'lblSignupSuccessLog.Visible = False
+                            'lblStatus.Visible = False
+                            'lblSignupErrorLog.CssClass = "label-danger"
+                            'lblSignupErrorLog.Text = "مشکل ارسال ایمیل فعال سازی از سمت سرور. لطفا با پشتیبانی تماس بگیرید."
+                            'lblSignupErrorLog.Visible = True
+                            lblStatus.CssClass = "label-danger"
+                            lblStatus.Text = "مشکل ارسال ایمیل فعال سازی از سمت سرور. لطفا با پشتیبانی تماس بگیرید."
+                            lblStatus.Visible = True
                         End Try
                     End Try
                 End Try
-
-                lblSignupSuccessLog.CssClass = "label-success"
-                lblSignupSuccessLog.Text = "ثبت نام شما با موفقیت انجام شد. لطفا ایمیل خود را چک نمایید و بر روی لینک فعالسازی حساب خود کلیک نمایید."
-                lblSignupSuccessLog.Visible = True
-                '------------------------------------------------------
+                'lblSignupErrorLog.Visible = False
+                'lblStatus.Visible = False
+                'lblSignupSuccessLog.CssClass = "label-success"
+                'lblSignupSuccessLog.Text = "ثبت نام شما با موفقیت انجام شد. لطفا ایمیل خود را چک نمایید و بر روی لینک فعالسازی حساب خود کلیک نمایید."
+                'lblSignupSuccessLog.Visible = True
+                lblStatus.CssClass = "label-success"
+                lblStatus.Text = "ثبت نام شما با موفقیت انجام شد. لطفا ایمیل خود را چک نمایید و بر روی لینک فعالسازی حساب خود کلیک نمایید."
+                lblStatus.Visible = True
             Catch ex As Exception
                 Response.Write(ex.Message)
-                lblSignupErrorLog.CssClass = "label-danger"
-                lblSignupErrorLog.Text += "ثبت نام ناموفق"
-                lblSignupErrorLog.Visible = True
+                'lblSignupSuccessLog.Visible = False
+                'lblStatus.Visible = False
+                'lblSignupErrorLog.CssClass = "label-danger"
+                'lblSignupErrorLog.Text += "ثبت نام ناموفق"
+                'lblSignupErrorLog.Visible = True
+                lblStatus.CssClass = "label-danger"
+                lblStatus.Text = "ثبت نام ناموفق"
+                lblStatus.Visible = True
             End Try
         Catch ex As Exception
 
