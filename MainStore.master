@@ -255,7 +255,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="w3_footer_grid_bottom">
                             <h4>100٪ پرداخت امن</h4>
 <%--                            <img src="/StoreComponents/images/card.png" alt=" " class="img-responsive" />--%>
-                            <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>
+<%--                            <script src="https://cdn.zarinpal.com/trustlogo/v1/trustlogo.js" type="text/javascript"></script>--%>
                         </div>
                     </div>
                     <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">

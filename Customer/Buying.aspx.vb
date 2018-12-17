@@ -44,18 +44,18 @@ Partial Class Buying
         Dim Factor = New Sale
         Dim rands As New Random
         Dim peygiricode As String
-        Dim qry = From m In db.Users
-                  Select m Where m.Username = HttpContext.Current.User.Identity.Name.ToString.Substring(0, HttpContext.Current.User.Identity.Name.ToString.Length - 2)
+        Dim qry = From m In db.UserMarkets
+                  Select m Where m.Email = HttpContext.Current.User.Identity.Name.ToString.Substring(0, HttpContext.Current.User.Identity.Name.ToString.Length - 2)
         For Each q In qry
-            Factor.Username = q.Username
+            'Factor.  = q.Email
             Factor.Phone = q.Phone
             Factor.Email = q.Email
             Factor.PeygiriCode = rands.Next(1000000, 9999999)
             peygiricode = Factor.PeygiriCode
-            'Factor.Address=txtAddress.Text
-            'Factor.Map =txtMap.Text
+            Factor.Address = txtAddress.Text
+            'Factor.Map = txtMap.Text
             'Factor.DateAndTime = txtDateAndTime.Text
-            db.Sales.InsertOnSubmit(Factor)
+            db.Sales.InsertOnSubmit(Factor) 'Sales = Factor
             db.SubmitChanges()
             Dim f() As String
             Dim t As Integer = 0
@@ -76,7 +76,7 @@ Partial Class Buying
                 't += 3
             Next
             btnSave.Visible = False
-            lblRequest.Text = " درخواست خرید شما با شماره پیگیری" + " " + peygiricode + Convert.ToString(Factor.IDS) + " " + " ارسال شد. لطفا منتظر تماس ما باشید."
+            lblRequest.Text = " درخواست با شماره پیگیری" + " " + peygiricode + Convert.ToString(Factor.IDS) + " " + " ثبت شد."
             lblRequest.Visible = True
         Next
     End Sub
